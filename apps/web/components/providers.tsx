@@ -11,6 +11,14 @@ if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
 
 const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL || "")
 
+/**
+ * Wraps the application subtree with Convex + Clerk authentication providers.
+ *
+ * Provides the Convex client and Clerk `useAuth` hook to all descendant components using ConvexProviderWithClerk.
+ *
+ * @param children - React nodes to render inside the provider.
+ * @returns The provider element wrapping `children`.
+ */
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ConvexProviderWithClerk client={convex} useAuth={useAuth}>

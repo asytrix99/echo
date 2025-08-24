@@ -5,6 +5,15 @@ import { useQuery, useMutation, Authenticated, Unauthenticated } from "convex/re
 import { api } from "@workspace/backend/_generated/api"
 import { Button } from "@workspace/ui/components/button"
 
+/**
+ * Client-side page that shows different UI depending on authentication state.
+ *
+ * When authenticated, it queries and displays the list of users (as JSON),
+ * shows a user menu, and provides an "Add" button that invokes the `add` mutation.
+ * When unauthenticated, it prompts the user to sign in.
+ *
+ * @returns A React element for the page.
+ */
 export default function Page() {
   
   const users = useQuery(api.users.getMany)

@@ -13,6 +13,15 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+/**
+ * Root layout for the application: applies global fonts, HTML attributes, and wraps children with authentication and app providers.
+ *
+ * Renders an `<html lang="en">` element with font CSS variables applied to `<body>`, then wraps the provided `children`
+ * with `ClerkProvider` (authentication) and `Providers` (application-wide contexts).
+ *
+ * @param children - The page or app content to render inside the providers.
+ * @returns The root HTML structure for the Next.js application.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
