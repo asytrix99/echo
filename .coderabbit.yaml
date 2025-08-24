@@ -1,0 +1,7 @@
+version: 1
+pull_request:
+  review:
+    enabled: true
+    summary: true
+    line_comments: true
+    approval: auto
