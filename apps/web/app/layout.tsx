@@ -25,8 +25,8 @@ export default function RootLayout({
       >
         <ClerkProvider>
           <Providers>
-            {children}
-            </Providers>
+            {children}            
+          </Providers>
         </ClerkProvider>
       </body>
     </html>
